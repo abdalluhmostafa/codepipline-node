@@ -4,13 +4,13 @@ phases:
     commands: 
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "docker build -t nodejs-test ."
-      - "docker tag nodejs-test:latest 624792314775.dkr.ecr.eu-west-1.amazonaws.com/nodejs-test:latest"
+      - "docker build -t abdalluhmostafa/codepipline-node ."
+      - "docker tag abdalluhmostafa/codepipline-node abdalluhmostafa/codepipline-node:latest"
   post_build: 
     commands: 
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-      - "docker push 624792314775.dkr.ecr.eu-west-1.amazonaws.com/nodejs-test:latest"
+      - "docker push abdalluhmostafa/codepipline-node:latest"
   pre_build: 
     commands: 
       - "echo Logging in to Docker Hub..."
