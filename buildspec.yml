@@ -5,11 +5,12 @@ phases:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
       - "docker build -t node-server ."
-      - "docker tag node-server node-server:latest"
+      - "docker tag node-server codepipline-node:latest"
   post_build: 
     commands: 
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
+      - "docker push abdalluhmostafa/codepipline-node:latest"
   pre_build: 
     commands: 
       - "echo Logging in to Docker Hub..."
